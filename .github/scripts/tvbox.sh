@@ -2,9 +2,9 @@
 
 find $GITHUB_WORKSPACE -maxdepth 3 -type f -name "*.json"
 
-for file in $(find $GITHUB_WORKSPACE -maxdepth 1 -type f -name "*.json"); do
-	sed -i '/^{"name":"磁力廣告"/ s/"regex":.*\]},/"regex":\["更多","最新","更新","直播","社區","社区","有趣","新葡京","英皇体育","新片首发","xuu","UUE29"\]},/' $file 2>/dev/null
-done
+# for file in $(find $GITHUB_WORKSPACE -maxdepth 1 -type f -name "*.json"); do
+# 	sed -i '/^{"name":"磁力廣告"/ s/"regex":.*\]},/"regex":\["更多","最新","更新","直播","社區","社区","有趣","新葡京","英皇体育","新片首发","xuu","UUE29"\]},/' $file 2>/dev/null
+# done
 sed -si '/"name":"live"/a\{"name":"俊于•综合","type":0,"url":"http://home.jundie.top:81/Cat/tv/live.txt","playerType":1,"epg":"http://epg.112114.xyz/?ch={name}&date={date}","logo": "https://epg.112114.xyz/logo/{name}.png"}, \
 {"name":"tvboxtv","type":0,"url":"./tvboxtv.txt","playerType":1,"epg":"http://epg.112114.xyz/?ch={name}&date={date}","logo":"https://epg.112114.xyz/logo/{name}.png"}, \
 {"name":"tvlive","type":0,"url":"./tvlive.txt","playerType":1,"epg":"http://epg.112114.xyz/?ch={name}&date={date}","logo":"https://epg.112114.xyz/logo/{name}.png"}, \
@@ -88,9 +88,9 @@ sed -szi 's|"ads":\[.*\]|"ads":\["raw.githubusercontent.com",\
 "z6.cnzz.com",\
 "z7.cnzz.com",\
 "z8.cnzz.com"\]|' $GITHUB_WORKSPACE/js.json $GITHUB_WORKSPACE/jsm.json 2>/dev/null
-for file in $(find $GITHUB_WORKSPACE -maxdepth 1 -type f -name "*.txt"); do
-	sed -i '/^DJ音乐,#genre#/d; /^斗鱼音乐/d; /^MTV/d; /^高清舞曲/d; /.mp4$/d; /.mov$/d; /^2022几首DJ串烧/d; /^$/d' $file 2>/dev/null
-done
+# for file in $(find $GITHUB_WORKSPACE -maxdepth 1 -type f -name "*.txt"); do
+# 	sed -i '/^DJ音乐,#genre#/d; /^斗鱼音乐/d; /^MTV/d; /^高清舞曲/d; /.mp4$/d; /.mov$/d; /^2022几首DJ串烧/d; /^$/d' $file 2>/dev/null
+# done
 sudo sed -i 's/assets:\/\/js/./g' $GITHUB_WORKSPACE/cat/js/config_open.json $GITHUB_WORKSPACE/cat/js/config_open99.json 2>/dev/null
 
 # rm -rf $GITHUB_WORKSPACE/9918.json
