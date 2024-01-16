@@ -91,6 +91,6 @@ sed -szi 's|"ads":\[.*\]|"ads":\["raw.githubusercontent.com",\
 for file in $(find $GITHUB_WORKSPACE -maxdepth 1 -type f -name "*.txt"); do
 	sed -i '/^DJ音乐,#genre#/d; /^斗鱼音乐/d; /^MTV/d; /^高清舞曲/d; /.mp4$/d; /.mov$/d; /^2022几首DJ串烧/d; /^$/d' $file 2>/dev/null
 done
-sed -i 's/assets:\/\/js/./g' $GITHUB_WORKSPACE/config_open.json $GITHUB_WORKSPACE/config_open99.json 2>/dev/null
+sed -i 's/assets:\/\/js/./g' $GITHUB_WORKSPACE/cat/js/config_open.json $GITHUB_WORKSPACE/cat/js/config_open99.json 2>/dev/null
 
 # rm -rf $GITHUB_WORKSPACE/9918.json
